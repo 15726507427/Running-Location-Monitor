@@ -8,3 +8,10 @@ The application persists data to MongoDB and MySQL using Spring Data as Data Acc
 
 Deployed applications to embedded Tomcat in automated fashion, and dockerize the system infrastructure in a Vagrant managed virtual machine.
 
+### Testing on Local
+The Spring boot application was developed based on maven. It can be tested on local by:
+
+```bash
+mvn clean install
+java -jar ./target/<service-name>.jar
+```
