@@ -8,7 +8,26 @@ The application persists data to MongoDB and MySQL using Spring Data as Data Acc
 
 Deployed applications to embedded Tomcat in automated fashion, and dockerize the system infrastructure in a Vagrant managed virtual machine.
 
-### Testing on Local
+**This is a _prototype of project Real-Time Fitness Tracking System_, with a naive frontend single web page written by Html/CSS and javascript, and a simulator that help for testing.**
+
+## Service Description
+
+### Running Location Service
+Communication with h2/MySQL database: upload and store pre-defined locations and running status. Get location detail according to runningId or status, send to frontend with Rest API.
+
+### Running Location Simulator
+A predefined service that can simulate a running path and set of locations, scheduled to run for unit test and integration test.
+
+### Running Distribution Service
+Decoupled service that send message (new current location from simulator) to message queue.
+
+### Running Location Updater
+Consume message from the queue, and setup webSocket connection with Frontend/Client side
+
+### Supply Location Service
+Store and retrieve supply locations. Supply can be flexible defined in the MongoDB database. For instance, medical supply.
+
+## Testing on Local
 The Spring boot application was developed based on maven. It can be tested on local by:
 
 ```bash
